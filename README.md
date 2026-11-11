@@ -23,6 +23,46 @@ The goal is to create a space where design inspiration meets functionality, maki
 - 💾 **Saved Designs** – Save room design ideas for future reference.
 - 📱 **Responsive Design** – Enjoy a clean and organized browsing experience.
 
+## 📸 Application Screenshots
+
+Here are screenshots showcasing the different pages and features of Marie S. Interiors.
+
+### 🏡 Home Page
+
+![Home Page 1](screenshots/screenshots/home-page1.png)
+
+![Home Page 2](screenshots/screenshots/home-page2.png)
+
+![Home Page 3](screenshots/screenshots/home-page3.png)
+
+### 🌸 Inspiration Page
+
+![Inspiration Page 1](screenshots/screenshots/inspiration-page1.png)
+
+![Inspiration Page 2](screenshots/screenshots/inspiration-page2.png)
+
+![Inspiration Page 3](screenshots/screenshots/inspiration-page3.png)
+
+### 📁 Projects Page
+
+![Projects Page 1](screenshots/screenshots/projects-page1.png)
+
+![Projects Page 2](screenshots/screenshots/projects-page2.png)
+
+### 🛋️ Living Room Project
+
+![Living Room Project 1](screenshots/screenshots/livingroomproject-page1.png)
+
+![Living Room Project 2](screenshots/screenshots/livingroomproject-page2.png)
+
+### 🎨 Room Designer
+
+![Room Designer 1](screenshots/screenshots/roomdesign-page1.png)
+
+![Room Designer 2](screenshots/screenshots/roomdesign-page2.png)
+
+![Room Designer 3](screenshots/screenshots/roomdesign-page3.png)
+
 ## 🤍 Design Aesthetic
 
 The visual direction of Marie S. Interiors focuses on:
@@ -52,6 +92,21 @@ The visual direction of Marie S. Interiors focuses on:
 marie-s-interiors/
 ├── api/
 ├── public/
+├── screenshots/
+│   └── screenshots/
+│       ├── home-page1.png
+│       ├── home-page2.png
+│       ├── home-page3.png
+│       ├── inspiration-page1.png
+│       ├── inspiration-page2.png
+│       ├── inspiration-page3.png
+│       ├── livingroomproject-page1.png
+│       ├── livingroomproject-page2.png
+│       ├── projects-page1.png
+│       ├── projects-page2.png
+│       ├── roomdesign-page1.png
+│       ├── roomdesign-page2.png
+│       └── roomdesign-page3.png
 ├── src/
 │   ├── assets/
 │   ├── components/
@@ -121,6 +176,19 @@ Vite generates the production files inside the `dist` folder.
 Marie S. Interiors was created to combine the beauty of interior design with the functionality of a modern web application.
 
 This project demonstrates the use of reusable React components, state management, routing, interactive features, responsive styling, and application testing.
+
+## ⚠️ Known Issues
+
+- No major known issues are currently identified.
+- Additional testing across different screen sizes, mobile devices, and browsers would help ensure a consistent user experience.
+
+## 🌱 Future Enhancements
+
+- Expand the room inspiration gallery with additional interior design styles.
+- Add more furniture, fabric, and decor selections.
+- Improve saved design features to make organizing projects easier.
+- Continue refining mobile responsiveness and accessibility.
+- Explore additional ways for users to customize and personalize their room concepts.
 
 ---
 
