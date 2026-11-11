@@ -1,0 +1,132 @@
+.site-sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  height: 100%;
+  padding: 38px 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fffefa;
+  border-right: 1px solid #e8e4d9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #292a26;
+  padding: 0 10px;
+}
+
+.sidebar-brand .brand-name {
+  font-size: 23px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.sidebar-brand .brand-subtitle {
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 3px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: #e8e4d9;
+  margin: 32px 0 25px;
+}
+
+.sidebar-label {
+  padding: 0 10px;
+  color: #a09e92;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.site-sidebar .navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.site-sidebar .nav-link {
+  display: block;
+  padding: 13px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #77776f;
+  transition: all 0.2s ease;
+}
+
+.site-sidebar .nav-link:hover,
+.site-sidebar .nav-link.active {
+  background-color: #edf0e9;
+  color: #34382f;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 20px 10px 5px;
+}
+
+.sidebar-consultation {
+  display: block;
+  background-color: #252722;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 13px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-consultation:hover {
+  background-color: #596452;
+}
+
+.sidebar-bottom p {
+  color: #a09e92;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 750px) {
+  .site-sidebar {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    height: auto;
+    padding: 18px 20px;
+    border-right: none;
+    border-bottom: 1px solid #e8e4d9;
+  }
+
+  .sidebar-divider,
+  .sidebar-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .site-sidebar .navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 15px;
+  }
+
+  .site-sidebar .nav-link {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+}

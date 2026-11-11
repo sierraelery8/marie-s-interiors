@@ -1,0 +1,298 @@
+.inspiration-page {
+  min-height: 100vh;
+  padding: 55px 0 70px;
+  background: var(--ivory);
+}
+
+.inspiration-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+.inspiration-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.inspiration-eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.inspiration-heading h1 {
+  font-size: clamp(34px, 4vw, 48px);
+  margin-bottom: 12px;
+}
+
+.inspiration-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.inspiration-search {
+  display: flex;
+  max-width: 620px;
+  margin: 0 auto 35px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 7px 8px 7px 20px;
+}
+
+.inspiration-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--charcoal);
+  font-size: 13px;
+}
+
+.inspiration-search button {
+  border: none;
+  border-radius: 24px;
+  padding: 12px 23px;
+  background: var(--charcoal);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.category-button {
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 10px 18px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.category-button:hover,
+.category-button.active {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #46523f;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.inspiration-card {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inspiration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.inspiration-photo-link {
+  display: block;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.inspiration-image {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.inspiration-card:hover .inspiration-image {
+  transform: scale(1.03);
+}
+
+.inspiration-card-content {
+  padding: 18px;
+}
+
+.inspiration-card-content p {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.inspiration-card-content h2 {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.photographer-credit {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.photographer-credit a {
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inspiration-message {
+  text-align: center;
+  color: var(--muted);
+  padding: 35px 15px;
+  font-size: 14px;
+}
+
+.inspiration-error {
+  color: #a34d42;
+}
+
+@media (max-width: 750px) {
+  .inspiration-page {
+    padding-top: 38px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .inspiration-image {
+    height: 200px;
+  }
+
+  .inspiration-card-content {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inspiration-image {
+    height: 230px;
+  }
+
+  .inspiration-search {
+    padding-left: 14px;
+  }
+
+  .inspiration-search button {
+    padding: 11px 16px;
+  }
+
+}
+
+
+/* Saved Favorites Button */
+
+.favorites-toolbar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+}
+
+.favorites-toggle {
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 11px 24px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favorites-toggle:hover,
+.favorites-toggle.active {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #46523f;
+}
+
+
+/* Favorite Heart Styling */
+
+.favorite-heart {
+  color: #777;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-heart:hover {
+  transform: scale(1.15);
+}
+
+.favorite-heart.saved {
+  color: #d9364f;
+}
+
+/* Red heart on the saved favorites toggle */
+
+.favorites-toggle {
+  color: #d9364f;
+}
+
+.favorites-toggle.active {
+  color: #d9364f;
+}
+
+.toggle-heart {
+  color: #d9364f;
+  margin-right: 5px;
+}
+
+
+/* Load More Photos Button */
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 35px auto 50px;
+}
+
+.load-more-button {
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 11px 24px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.load-more-button:hover {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #46523f;
+}
+
+.load-more-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

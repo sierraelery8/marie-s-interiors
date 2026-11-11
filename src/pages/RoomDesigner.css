@@ -1,0 +1,949 @@
+.room-designer-page {
+  min-height: 100vh;
+  padding: 50px 0 75px;
+  background: var(--ivory);
+}
+
+.room-designer-container {
+  width: min(1400px, 94%);
+  margin: 0 auto;
+}
+
+.room-designer-heading {
+  margin-bottom: 35px;
+}
+
+.room-designer-heading p {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.room-designer-heading h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 12px;
+}
+
+.room-designer-heading span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =================================
+   MAIN TWO-COLUMN PAGE LAYOUT
+================================= */
+
+.designer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(290px, 0.85fr);
+  gap: 25px;
+  align-items: start;
+}
+
+.designer-main {
+  min-width: 0;
+}
+
+.designer-sidebar {
+  min-width: 0;
+}
+
+/* =================================
+   LEFT WORKSPACE - TWO BY TWO GRID
+================================= */
+
+.designer-workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "inspiration stack";
+  gap: 22px;
+  align-items: start;
+}
+
+.room-inspiration-panel {
+  grid-area: inspiration;
+  align-self: start;
+}
+
+.designer-workspace-stack {
+  grid-area: stack;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.designer-workspace-stack .designer-panel {
+  margin-bottom: 0;
+}
+
+
+/* =================================
+   GENERAL PANELS
+================================= */
+
+.designer-panel {
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 0;
+}
+
+.designer-panel h2 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.panel-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* =================================
+   MOOD BOARD
+================================= */
+
+.mood-board {
+  min-height: 230px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.mood-board-image {
+  border-radius: 7px;
+  min-height: 105px;
+  transition: background-color 0.3s ease;
+}
+
+.mood-board-main {
+  grid-row: span 2;
+  background: #ded4c5;
+}
+
+.mood-board-second {
+  background: #dce3d7;
+}
+
+.mood-board-third {
+  background: #e8dfd3;
+}
+
+.selected-color-label {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.selected-color-label strong {
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+.selected-materials {
+  margin-top: 18px;
+}
+
+.selected-material-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.material-tag {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #edf1e8;
+  color: #596452;
+  font-size: 11px;
+}
+
+.material-empty {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =================================
+   COLOR STORY
+================================= */
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.color-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  border: 2px solid transparent;
+  background: transparent;
+  padding: 5px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.color-option.active {
+  border-color: #77836d;
+  color: var(--charcoal);
+}
+
+.color-swatch {
+  display: block;
+  width: 100%;
+  height: 85px;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 90, 80, 0.15);
+  overflow: hidden;
+}
+
+/* =================================
+   SAVED MATERIALS
+================================= */
+
+.material-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.material-item {
+  width: 100%;
+  text-align: left;
+  background: #f7f4eb;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.material-item strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.material-item span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.material-item:hover {
+  border-color: #9ba88f;
+  background: #f1f3ec;
+}
+
+.material-item.selected {
+  border-color: #77836d;
+  background: #edf1e8;
+}
+
+.material-select-label {
+  display: block;
+  margin-top: 10px;
+  color: #68745f !important;
+  font-size: 11px;
+}
+
+/* =================================
+   DESIGN SELECTIONS SIDEBAR
+================================= */
+
+.design-selections-panel {
+  border-top: 3px solid #aab49e;
+}
+
+.sidebar-selection {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-selection:last-child {
+  border-bottom: none;
+}
+
+.sidebar-selection > span,
+.direction-detail > span {
+  display: block;
+  color: #8b927f;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.sidebar-selection strong {
+  color: var(--charcoal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-color-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-color-swatch {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(100, 90, 80, 0.2);
+  background-color: var(--swatch-color, #eee7d8);
+  flex-shrink: 0;
+}
+
+/* =================================
+   ROOM DETAILS FORM
+================================= */
+
+.room-details-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.new-design-button {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 8px 13px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.new-design-button:hover {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #46523f;
+}
+
+.room-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.room-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--charcoal);
+  font-size: 12px;
+}
+
+.room-form input,
+.room-form select,
+.room-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  background: #fffefa;
+  color: var(--charcoal);
+  font-size: 13px;
+}
+
+.room-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.save-mood-board {
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 20px;
+  background: var(--charcoal);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.save-mood-board:hover {
+  background: #596452;
+}
+
+.save-message {
+  margin-top: 12px;
+  color: #596452;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* =================================
+   DESIGN DIRECTION
+================================= */
+
+.direction-detail strong {
+  color: var(--charcoal);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =================================
+   SAVED DESIGNS
+================================= */
+
+.saved-designs-panel {
+  margin-top: 0;
+}
+
+.saved-design-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.saved-design-item:last-child {
+  border-bottom: none;
+}
+
+.saved-design-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.saved-design-info strong {
+  color: var(--charcoal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.saved-design-info span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.saved-design-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.load-design-button,
+.delete-design-button {
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.load-design-button {
+  background: var(--sage);
+  border: 1px solid var(--sage);
+  color: #46523f;
+}
+
+.load-design-button:hover {
+  background: #a8b79b;
+}
+
+.delete-design-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.delete-design-button:hover {
+  background: #f8eeee;
+  border-color: #d8b9b2;
+  color: #a34f4f;
+}
+
+/* =================================
+   TEXTURED COLOR STORY
+================================= */
+
+.color-swatch,
+.mood-board-main {
+  background-color: var(--swatch-color, #eee7d8);
+  background-repeat: repeat;
+  transition: background-color 0.3s ease;
+}
+
+/* Warm Ivory - Linen */
+
+.color-texture-linen {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.22) 0px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(120, 105, 85, 0.12) 0px,
+      transparent 1px,
+      transparent 5px
+    );
+  background-size: 7px 7px;
+}
+
+/* Soft Sage - Botanical */
+
+.color-texture-botanical {
+  background-image:
+    radial-gradient(
+      ellipse at 25% 30%,
+      transparent 45%,
+      rgba(65, 95, 65, 0.22) 47%,
+      transparent 51%
+    ),
+    radial-gradient(
+      ellipse at 75% 70%,
+      transparent 45%,
+      rgba(65, 95, 65, 0.18) 47%,
+      transparent 51%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(255, 255, 255, 0.16) 49%,
+      transparent 52%
+    );
+  background-size: 35px 35px, 40px 40px, 20px 20px;
+}
+
+/* Dusty Rose - Floral */
+
+.color-texture-floral {
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.28) 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(145, 85, 90, 0.16) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 3px
+    );
+  background-size: 24px 24px;
+}
+
+/* Warm Taupe - Woven */
+
+.color-texture-woven {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2) 0px,
+      transparent 2px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(105, 85, 65, 0.18) 0px,
+      transparent 2px,
+      transparent 5px
+    );
+  background-size: 10px 10px;
+}
+
+/* Slate Blue - Marble */
+
+.color-texture-marble {
+  background-image:
+    repeating-linear-gradient(
+      125deg,
+      transparent 0px,
+      transparent 12px,
+      rgba(255, 255, 255, 0.22) 13px,
+      transparent 15px,
+      transparent 28px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 25px,
+      rgba(75, 100, 115, 0.12) 27px,
+      transparent 29px
+    );
+  background-size: 70px 70px;
+}
+
+/* =================================
+   ROOM INSPIRATION
+================================= */
+
+.room-inspiration-panel {
+  overflow: hidden;
+}
+
+.inspiration-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.inspiration-heading h2 {
+  margin-bottom: 0;
+}
+
+.inspiration-eyebrow {
+  color: #8b927f;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.inspiration-room-label {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #edf1e8;
+  color: #596452;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.inspiration-feature {
+  overflow: hidden;
+  border-radius: 9px;
+  background: #e8dfd3;
+  margin-bottom: 18px;
+}
+
+.inspiration-image {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.inspiration-feature-caption {
+  padding: 15px;
+  background: #f7f4ed;
+}
+
+.inspiration-feature-caption > span {
+  color: #8b927f;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.inspiration-feature-caption h3 {
+  margin: 7px 0;
+  color: var(--charcoal);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.inspiration-feature-caption p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.inspiration-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.inspiration-detail-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fffefa;
+}
+
+.inspiration-sample {
+  height: 85px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fabric-sample {
+  background-color: #e9dfd0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.45) 0px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(130, 110, 85, 0.16) 0px,
+      transparent 1px,
+      transparent 6px
+    );
+  background-size: 8px 8px;
+}
+
+.fabric-sample span {
+  position: absolute;
+  width: 55%;
+  height: 150%;
+  top: -20%;
+  right: -10%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  transform: rotate(25deg);
+}
+
+.oak-sample {
+  background-color: #c6a77c;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(115, 76, 42, 0.12) 2px,
+      transparent 4px,
+      transparent 13px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 0px,
+      transparent 2px,
+      transparent 35px
+    );
+}
+
+.oak-sample span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.13) 45%,
+    transparent 65%
+  );
+}
+
+
+.furniture-sample {
+  width: 100%;
+  height: 125px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #e8e5dc;
+}
+
+.furniture-sample img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+
+.furniture-sample:hover img {
+  transform: scale(1.05);
+}
+
+
+.inspiration-detail-copy {
+  padding: 12px;
+}
+
+.inspiration-category {
+  display: block;
+  color: #8b927f;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-bottom: 7px;
+}
+
+.inspiration-detail-copy h3 {
+  color: var(--charcoal);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.inspiration-detail-copy p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.palette-inspiration {
+  grid-column: 1 / -1;
+}
+
+.palette-inspiration .inspiration-detail-copy {
+  padding: 15px;
+}
+
+.inspiration-palette {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.inspiration-palette-color {
+  min-width: 0;
+}
+
+.inspiration-palette-color > span {
+  display: block;
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(100, 90, 80, 0.12);
+  border-radius: 6px;
+}
+
+.inspiration-palette-color small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1050px) {
+  .designer-layout {
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.9fr);
+    gap: 18px;
+  }
+
+  .designer-workspace-grid {
+    gap: 15px;
+  }
+
+  .designer-panel {
+    padding: 17px;
+  }
+
+  .color-options {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  .designer-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .designer-workspace-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .designer-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    align-items: start;
+  }
+
+  .designer-sidebar .designer-panel {
+    margin-bottom: 0;
+  }
+
+  .mood-board {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .room-designer-page {
+    padding: 35px 0 55px;
+  }
+
+  .room-designer-container {
+    width: 92%;
+  }
+
+  .designer-workspace-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "inspiration"
+      "moodboard"
+      "colorstory"
+      "materials";
+  }
+
+  .designer-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .designer-panel {
+    padding: 20px;
+  }
+
+  .inspiration-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inspiration-image {
+    height: 210px;
+  }
+
+  .inspiration-details {
+    grid-template-columns: 1fr;
+  }
+
+  .palette-inspiration {
+    grid-column: auto;
+  }
+
+  .inspiration-palette {
+    gap: 6px;
+  }
+
+  .inspiration-palette-color small {
+    font-size: 8px;
+  }
+
+  .material-list {
+    grid-template-columns: 1fr;
+  }
+
+  .saved-design-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
