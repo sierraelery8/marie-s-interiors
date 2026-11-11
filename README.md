@@ -1,49 +1,52 @@
-# Marie S. Interiors
+# 🏡 Marie S. Interiors
 
-**A thoughtfully designed interior design experience.**
+### ✨ Inspired Spaces. Thoughtful Details. Beautiful Living.
 
-Marie S. Interiors is a modern interior design web application created to bring inspiration, creativity, and organization together in one place. The application allows users to explore design inspiration, browse projects, and create personalized room concepts using curated colors, materials, and furniture ideas.
+Welcome to **Marie S. Interiors**, an interior design experience created to bring creativity, inspiration, and organization together in one place.
 
-## Project Overview
+From exploring beautiful spaces to creating personalized room concepts, this application allows users to bring their design ideas to life through curated colors, materials, furniture inspiration, and project planning.
 
-Marie S. Interiors was developed as a React application with a focus on reusable components, interactive features, and a clean, elegant user experience.
+## 🌿 About the Project
 
-The design uses a soft, neutral aesthetic inspired by luxury interiors, natural textures, warm wood finishes, and calming color palettes.
+Marie S. Interiors is a modern interior design web application built with React. The overall aesthetic is inspired by luxury interiors, natural textures, warm neutrals, soft color palettes, and timeless design.
 
-## Features
+The goal is to create a space where design inspiration meets functionality, making it easier to explore ideas and organize interior design projects.
 
-- **Home Page:** A welcoming landing page introducing the Marie S. Interiors brand.
-- **Inspiration:** Explore interior design ideas and visual inspiration.
-- **Projects:** Browse design projects and view project information.
-- **Project Details:** View individual project overviews, timelines, current selections, and designer notes.
-- **Room Designer:** Create room concepts with color palettes, fabric textures, wood finishes, furniture inspiration, and saved materials.
-- **Responsive Design:** A clean interface designed to provide an organized browsing experience.
-- **Navigation:** Consistent navigation between application pages.
+## 🛋️ Features
 
-## Design Features
+- 🏠 **Home Page** – A welcoming introduction to the Marie S. Interiors brand.
+- 🌸 **Inspiration** – Explore interior design ideas and visual inspiration.
+- 📁 **Projects** – Browse design projects and keep track of individual spaces.
+- 📝 **Project Details** – View project overviews, timelines, current selections, and designer notes.
+- 🎨 **Room Designer** – Create room concepts using curated color palettes, fabric textures, wood finishes, and furniture inspiration.
+- 🧺 **Saved Materials** – Keep track of favorite design materials and selections.
+- 💾 **Saved Designs** – Save room design ideas for future reference.
+- 📱 **Responsive Design** – Enjoy a clean and organized browsing experience.
 
-The visual style of Marie S. Interiors focuses on:
+## 🤍 Design Aesthetic
 
-- Warm ivory and cream tones
-- Soft sage and muted neutral colors
-- Natural oak and wood-inspired finishes
+The visual direction of Marie S. Interiors focuses on:
+
+- Warm ivory and creamy neutrals
+- Soft sage and muted tones
+- Natural oak and wood finishes
 - Linen and woven fabric textures
-- Curated furniture and interior inspiration
-- A clean, minimal, luxury-inspired layout
+- Curated furniture inspiration
+- Minimalist layouts with a luxury feel
 
-## Technologies Used
+## 💻 Technologies Used
 
-- React
+- ⚛️ React
 - JavaScript
 - Vite
 - HTML5
 - CSS3
 - React Router
-- Context API
+- React Context API
 - Vitest
 - React Testing Library
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 marie-s-interiors/
@@ -61,9 +64,9 @@ marie-s-interiors/
 └── README.md
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
-To run the project locally:
+To run the application locally:
 
 **1. Clone the repository**
 
@@ -91,9 +94,9 @@ npm run dev
 
 Open the local URL provided in your terminal to view the application.
 
-## Testing
+## 🧪 Testing
 
-The application uses Vitest and React Testing Library for component and page testing.
+The application uses Vitest and React Testing Library to test page functionality and components.
 
 Run the test suite:
 
@@ -101,26 +104,26 @@ Run the test suite:
 npm run test
 ```
 
-The current test suite includes 12 passing tests across four test files.
+**Current testing results: 12 passing tests across 4 test files.** ✅
 
-## Production Build
+## 📦 Production Build
 
-To create a production build, run:
+To create a production-ready build, run:
 
 ```bash
 npm run build
 ```
 
-Vite generates the production-ready files inside the `dist` folder.
+Vite generates the production files inside the `dist` folder.
 
-## Project Goals
+## 🎯 Project Goals
 
-The goal of Marie S. Interiors is to create an interactive and visually appealing interior design platform that combines inspiration with practical project organization.
+Marie S. Interiors was created to combine the beauty of interior design with the functionality of a modern web application.
 
-This project demonstrates the use of React components, props, state management, routing, reusable styling, application testing, and modern frontend development practices.
+This project demonstrates the use of reusable React components, state management, routing, interactive features, responsive styling, and application testing.
 
 ---
 
-**Marie S. Interiors**
+### 🤍 Marie S. Interiors
 
-*Inspired spaces. Thoughtful details. Beautiful living.*
+*Inspired Spaces. Thoughtful Details. Beautiful Living.* ✨
