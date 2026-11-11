@@ -896,14 +896,27 @@
     width: 92%;
   }
 
-  .designer-workspace-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "inspiration"
-      "moodboard"
-      "colorstory"
-      "materials";
-  }
+
+.designer-workspace-grid {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "inspiration"
+    "stack";
+  width: 100%;
+  gap: 18px;
+}
+
+.designer-workspace-stack {
+  width: 100%;
+  min-width: 0;
+}
+
+.designer-workspace-grid > *,
+.designer-workspace-stack > * {
+  min-width: 0;
+  width: 100%;
+}
+
 
   .designer-sidebar {
     grid-template-columns: 1fr;
